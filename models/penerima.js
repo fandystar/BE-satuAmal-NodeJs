@@ -8,7 +8,18 @@ const penerimaSchema = new Schema({
         lowercase: true,
         trim: true
     },
-    umur : {
+    kecamatan : {
+        type: String,
+        required: true,
+        lowercase: true,
+        trim: true
+    },
+    rt : {
+        type: String,
+        required: true,
+        lowercase: true,
+        trim: true
+    },umur : {
         type: Number,
         required: true,
         lowercase: true,

@@ -17,9 +17,13 @@ const { Penerima } = require("../../BE - satuAmal/models/penerima");
 exports.Create = async(req, res, next) => {
     try {
         let obj = {};
-        const { nama, umur, alamat, keterangan, referensi } = req.body;
+        const { nama, umur, alamat, keterangan, referensi,kecamatan,rt } = req.body;
         if (nama) obj.nama = nama;
         if (umur) obj.umur = umur;
+        if (kecamatan) obj.kecamatan = kecamatan;
+        if (rt) obj.rt = rt;
+       
+       
         if (alamat) obj.alamat = alamat;
         if (keterangan) obj.keterangan = keterangan;
         if (referensi) obj.referensi = referensi;
@@ -74,8 +78,11 @@ exports.Update = async(req, res, next) => {
         const { id } = req.params;
         if (!id) return next({ message: "Missing ID parameters" });
         let obj = {};
-        const { nama, umur, alamat, keterangan, referensi } = req.body;
+        const { nama, umur, alamat, keterangan, referensi,kecamatan,rt } = req.body;
         if (nama) obj.nama = nama;
+        if (kecamatan) obj.kecamatan = kecamatan;
+        if (rt) obj.rt = rt;
+       
         if (umur) obj.umur = umur;
         if (alamat) obj.alamat = alamat;
         if (keterangan) obj.keterangan = keterangan;
