@@ -10,6 +10,7 @@ const mongoose = require('mongoose');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 
+//app.get('/', (res, req, next) => {return 'home page'} )
 //cors
 app.use(cors());
 
@@ -31,14 +32,16 @@ db.once("open", () => console.log("Connected to mongodb!"));
 const donaturRoutes = require("./routes/donatur");
 const penerimaRoutes = require("./routes/penerima");
 const donasiRoutes = require("./routes/donasi");
+const indexRoutes = require("./routes/index")
 
-// const errorHandler = require("./middlewares/errorHandler");
+const errorHandler = require("./middlewares/errorHandler");
 
 app.use("/donatur", donaturRoutes);
 app.use("/penerima", penerimaRoutes);
 app.use("/donasi", donasiRoutes);
+app.use("/", indexRoutes);
 
-// app.use(errorHandler);
+app.use(errorHandler);
 
 // server
 const PORT = process.env.PORT || 7000;
