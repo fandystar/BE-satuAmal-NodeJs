@@ -36,6 +36,7 @@ const indexRoutes = require("./routes/index")
 
 const errorHandler = require("./middlewares/errorHandler");
 // test
+
 app.use("/donatur", donaturRoutes);
 app.use("/penerima", penerimaRoutes);
 app.use("/donasi", donasiRoutes);
